@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NCG</title>
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <button type="button" class="close glyphicon glyphicon-chevron-left"></button>
+    <button type="button" id="delete-output" class="glyphicon glyphicon-trash"></button>
+    
+    <div id="output"></div>
+    <div id="search">
+        <h1 id="title">#weAreLate!</h1>
+        <button type="button" class="close-search">x</button>
+        <form id="search-holder">
+            
+            <button type="submit" class="btn btn-primary">Generate</button>
+
+            <div id="option-holder">
+              <input id="paragraph" type="radio" name="option" value="paragraph" checked="checked" />
+              <label for="paragraph">Paragrphs</label>
+              
+              <input id="sentence" type="radio" name="option" value="sentence"/>
+              <label for="sentence">Sentences</label>
+
+              <input id="word" type="radio" name="option" value="word"/>
+              <label for="word">Words</label>
+              
+              <input id="number" type="number" min="0" value="10" />
+            </div>
+        </form>
+      
+    </div>
+
+    
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

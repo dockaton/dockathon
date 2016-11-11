@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  mongo:
+    image: mongo:3.0.14
+    restart: always
+    command: [mongod, --smallfiles]
+
+  db-populate:
+    depends_on:
+      - mongo
+    build: ./db-populate
+    image: werl8-db-populate
+
+  ipsum:
+    depends_on:
+      - mongo
+      - db-populate
+    build: ./ipsum
+    image: werl8-ipsum
+    ports:
+      - 80
