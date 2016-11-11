@@ -112,10 +112,19 @@ var getRandomFunction = function(req) {
   return getRandomParagraphs;
 }
 
+var getConcatSymbol = function(req) {
+  if (req.query.type) {
+    if (req.query.type === TYPE_SENTENCE ||
+        req.query.type === TYPE_WORD) {
+      return ' ';
+    }
+  return '\n';
+}
+
 app.get('/ipsum', function (req, res) {
   var callback = (data) => {
       console.log (data);
-      res.end(data.join("\n"));
+      res.end(data.join(getConcatSymbol(req)));
   };
 
   var randomFunction = getRandomFunction(req);
