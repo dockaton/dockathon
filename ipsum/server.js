@@ -118,8 +118,10 @@ var getConcatSymbol = function(req) {
         req.query.type === TYPE_WORD) {
       return ' ';
     }
+  }
+
   return '\n';
-}
+};
 
 app.get('/ipsum', function (req, res) {
   var callback = (data) => {
